@@ -10,9 +10,9 @@ class HomePortrait extends StatelessWidget {
          crossAxisAlignment: CrossAxisAlignment.stretch,
          children: <Widget>[
           Expanded(
-            child: HomeCardWidget("Card 1")),
+            child: HomeCardWidget("Health", Colors.red, Icons.favorite)),
           Expanded(
-            child: HomeCardWidget("Card 2"))
+            child: HomeCardWidget("Natural", Colors.blue, Icons.face_retouching_natural))
          ],
        )),
         Expanded(
@@ -21,7 +21,7 @@ class HomePortrait extends StatelessWidget {
             children: <Widget>[
               Expanded(
                 child: Card(
-                  child: HomeCardWidget("Card 3"),
+                  child: HomeCardWidget("Sleep",Colors.cyanAccent, Icons.alarm_add),
                 ),
               ),
             ],
@@ -31,9 +31,10 @@ class HomePortrait extends StatelessWidget {
          crossAxisAlignment: CrossAxisAlignment.stretch,
          children: <Widget>[
           Expanded(
-            child: HomeCardWidget("Card 4")),
+            child: HomeCardWidget("Food",Colors.green, Icons.fastfood_sharp)),
+         
           Expanded(
-            child: HomeCardWidget("Card 5"))
+            child: HomeCardWidget("Activity",Colors.orange, Icons.play_circle))
          ],
        )),
      ],
