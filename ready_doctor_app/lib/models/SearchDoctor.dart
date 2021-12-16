@@ -35,4 +35,4 @@ List<SearchDoctor> demo_search_doctors=[
     time: "12.00pm - 4.00pm",
     hospitalName: "New City Clinic",
   ),
-];
+]; 
