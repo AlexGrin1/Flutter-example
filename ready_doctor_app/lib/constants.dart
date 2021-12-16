@@ -6,3 +6,9 @@ const  backgroundColor= Color(0xFFE85050);
 const redColor = Color(0xFFE85050);
 
 const  defaultPadding = 16.0;
+
+OutlineInputBorder textFieldBorder = OutlineInputBorder(
+  borderSide: BorderSide(
+    color: primaryColor.withOpacity(0.1)
+  )
+);
