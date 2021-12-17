@@ -16,7 +16,9 @@ class MyApp extends StatelessWidget {
         primaryColor: primaryColor,
         textTheme: Theme.of(context).textTheme.apply(displayColor: textColor),
         elevatedButtonTheme: ElevatedButtonThemeData(
-          style: TextButton.styleFrom(padding: EdgeInsets.all(defaultPadding),
+          style: TextButton.styleFrom(
+            backgroundColor: primaryColor,
+            padding: EdgeInsets.all(defaultPadding),
           ),
         ),
         inputDecorationTheme: InputDecorationTheme(

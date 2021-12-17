@@ -1,10 +1,12 @@
 import "package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ready_doctor_app/screens/auth/sign_in_screen.dart';
+import 'package:form_field_validator/form_field_validator.dart';
+import 'package:ready_doctor_app/screens/auth/sign_up_screen.dart';
 import 'package:ready_doctor_app/constants.dart';
+import 'package:ready_doctor_app/screens/auth/components/sign_in_form.dart';
 import 'package:ready_doctor_app/screens/auth/components/sign_up_form.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignInScreen extends StatelessWidget {
   // const SignUpScreen({Key? key,}) : super(key: key);
 
   final _formKey = GlobalKey<FormState>();
@@ -18,7 +20,8 @@ class SignUpScreen extends StatelessWidget {
         children: [
           SvgPicture.asset("./assets/icons/Sign_Up_bg.svg",
               height: MediaQuery.of(context).size.height),
-          Center(
+          Padding(
+            padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.1),
             child: SafeArea(
               child: Padding(
                 padding: const EdgeInsets.only(top: 10.0),
@@ -28,7 +31,7 @@ class SignUpScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Create Account",
+                        Text("Sign In",
                             style: Theme.of(context)
                                 .textTheme
                                 .headline5!
@@ -36,11 +39,14 @@ class SignUpScreen extends StatelessWidget {
                         const SizedBox(height: defaultPadding),
                         Row(
                           children: [
-                            Text("Already have an account"),
+                            Text("Don't have an account?"),
                             TextButton(
-                                onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=> SignInScreen())),
+                                onPressed: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => SignUpScreen())),
                                 child: Text(
-                                  "Sign In",
+                                  "Sign Up",
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ))
                           ],
@@ -48,7 +54,7 @@ class SignUpScreen extends StatelessWidget {
                         const SizedBox(
                           height: defaultPadding * 2,
                         ),
-                        SignUpForm(
+                        SignInForm(
                           formKey: _formKey,
                         ),
                         const SizedBox(
@@ -65,7 +71,7 @@ class SignUpScreen extends StatelessWidget {
                                     _formKey.currentState!.save();
                                   }
                                 },
-                                child: Text("Sign Up")))
+                                child: Text("Sign In")))
                       ],
                     )),
               ),
@@ -76,4 +82,3 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 }
-

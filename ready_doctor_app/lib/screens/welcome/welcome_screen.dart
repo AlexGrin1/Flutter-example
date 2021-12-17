@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ready_doctor_app/constants.dart';
+import 'package:ready_doctor_app/screens/auth/sign_in_screen.dart';
 import 'package:ready_doctor_app/screens/auth/sign_up_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -40,7 +41,7 @@ class WelcomeScreen extends StatelessWidget {
                     child: SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=> SignInScreen(),)),
                         style: TextButton.styleFrom(
                             elevation: 0,
                             backgroundColor: Colors.transparent,
